@@ -1,2 +1,6 @@
 func-timeout==4.3.5
 numpy==1.19.5
+GitPython == 3.1.17
+pytz
+func_timeout
+dataclasses
