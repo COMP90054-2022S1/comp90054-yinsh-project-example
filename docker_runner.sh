@@ -30,10 +30,10 @@ echo "RAM limit: ${CPU_limit}"
 docker container rm ${container_name}
 
 current_path=`pwd`
-docker_cmd="docker run -it --rm --cpus=${CPU_limit} --memory=${RAM_limit} --name ${container_name} -v ${current_path}:/code ${image_name}:${image_tag} $*"
+docker_cmd="docker run -it --rm --cpus=${CPU_limit} --memory=${RAM_limit} -v ${current_path}:/code ${image_name}:${image_tag} $*"
 
 #for debugging:
-#docker_cmd="docker run -it --rm --cpus=${CPU_limit} --memory=${RAM_limit} --name ${container_name} -v ${current_path}:/code ${image_name}:${image_tag} bash"
+#docker_cmd="docker run -it --rm --cpus=${CPU_limit} --memory=${RAM_limit} -v ${current_path}:/code ${image_name}:${image_tag} bash"
 
 echo $docker_cmd
 eval $docker_cmd
